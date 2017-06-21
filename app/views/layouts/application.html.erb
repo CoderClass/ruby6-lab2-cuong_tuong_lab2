@@ -16,12 +16,18 @@
     <div class="collapse navbar-toggleable-xs" id="nav-content">
       <a class="navbar-brand" href="/"><%= image_tag 'logo-small.png' %></a>
       <ul class="nav navbar-nav">
+      <% if !!current_user %>
         <li class="nav-item">
           <a class="nav-link" href="<%= new_user_path %>">Sign Up</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/login">Sign In</a>
         </li>
+      <% else %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Sign Out</a>
+        </li>
+      <% end %>
         <li class="nav-item">
           <a class="nav-link" href="<%= users_path %>">Browse Profiles</a>
         </li>
